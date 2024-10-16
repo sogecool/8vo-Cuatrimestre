@@ -1,0 +1,44 @@
+* {
+  margin: 0; /* Elimina los márgenes por defecto de todos los elementos */
+  padding: 0; /* Elimina el relleno por defecto de todos los elementos */
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
+}
+
+body {
+  background-color: #ececec; /* Establece el color de fondo del cuerpo del documento */
+  font-family: 'Ubuntu', sans-serif; /* Define la fuente de texto como Ubuntu, usando una alternativa sans-serif si no está disponible */
+}
+
+.head {
+  background-color: rgb(187, 70, 49); /* Establece el color de fondo del encabezado con un tono rojo */
+  padding: 20px; /* Agrega un relleno de 20px alrededor del contenido del encabezado */
+  position: fixed; /* Fija la posición del encabezado en la parte superior de la página */
+  top: 0; /* Coloca el encabezado en la parte superior de la ventana */
+  width: 100%; /* El encabezado ocupa todo el ancho de la ventana */
+  color: white; /* El texto del encabezado será de color blanco */
+}
+
+#container {
+  width: min(100%, 1000px); /* El contenedor tendrá un ancho máximo de 1000px o el 100% del ancho de la ventana, lo que sea menor */
+  margin: 100px auto; /* Agrega un margen de 100px en la parte superior e inferior y centra horizontalmente el contenedor */
+  display: flex; /* Usa un layout de flexbox para organizar los elementos dentro del contenedor */
+  flex-wrap: wrap; /* Permite que los elementos dentro del contenedor se ajusten a la siguiente fila si no caben en una sola */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos del contenedor de manera uniforme */
+}
+
+.card {
+  width: 230px; /* Define el ancho de cada tarjeta */
+  margin-top: 100px; /* Agrega un margen superior de 100px a las tarjetas */
+  background-color: white; /* El fondo de las tarjetas será blanco */
+  padding: 20px; /* Agrega un relleno interno de 20px dentro de cada tarjeta */
+  border-radius: 20px; /* Aplica bordes redondeados de 20px a las tarjetas */
+}
+
+.card img {
+  width: 100%; /* Las imágenes dentro de las tarjetas ocuparán todo el ancho disponible de las tarjetas */
+}
+
+.card span {
+  color: #6e6e6e; /* Define el color del texto dentro de las tarjetas como gris */
+  font-weight: 500; /* Establece un peso de fuente medio para el texto */
+}
