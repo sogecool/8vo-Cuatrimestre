@@ -26,4 +26,4 @@ function crearpokemon(pokemon){
 `;
 }
 //Ejecutamos la funcion enviando la cantidad de pokemon a pintar.
-printPokemons(16);
+printPokemons(30);
