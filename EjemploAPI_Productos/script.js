@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <td>${producto.title}</td>
           <td>${producto.price}</td>
           <td>${producto.category}</td>
+          <td><img src="${producto.image}" alt="${producto.title}" style="width: 100px; height: auto;"></td>
           <!-- Agrega más celdas si la API devuelve más datos -->
         `;
         tablaProductos.querySelector('tbody').appendChild(fila);
