@@ -1,3 +1,8 @@
+
+import 'package:dev/views/Recursos.dart';
+import 'package:dev/views/gifs_ex.dart';
+import 'package:dev/views/json_ex.dart';
+import 'package:dev/views/page_transitions.dart';
 import 'package:flutter/material.dart';
 
 import 'ejemplos/cuadrado.dart';
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: TrianguloApp(),
+      home: HomeScreen(),
     );
   }
 }
