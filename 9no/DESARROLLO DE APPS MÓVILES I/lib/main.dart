@@ -1,4 +1,6 @@
-import 'package:dev/views/map_screen.dart';
+import 'package:app_flutter/views/LoadingPage.dart';
+import 'package:app_flutter/views/home.dart';
+import 'package:app_flutter/views/recursos.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MapScreen(),
+      home: Recursos(),
     );
   }
 }
