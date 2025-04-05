@@ -1,0 +1,11 @@
+YgksP9RN7WKiJmtuImLsdax9xrKkIaqBA1IyZQYD
+
+
+
+https://api.watchmode.com/v1/sources/?apiKey=YgksP9RN7WKiJmtuImLsdax9xrKkIaqBA1IyZQYD
+
+https://api.watchmode.com/v1/regions/?apiKey=YgksP9RN7WKiJmtuImLsdax9xrKkIaqBA1IyZQYD
+
+https://api.watchmode.com/v1/list-titles/?apiKey=YgksP9RN7WKiJmtuImLsdax9xrKkIaqBA1IyZQYD
+
+https://api.watchmode.com/v1/releases/?apiKey=YgksP9RN7WKiJmtuImLsdax9xrKkIaqBA1IyZQYD
