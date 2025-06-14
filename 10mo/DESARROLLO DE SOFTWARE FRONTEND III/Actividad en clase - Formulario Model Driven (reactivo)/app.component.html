@@ -1,0 +1,38 @@
+<header>
+  <h1>{{ title }}</h1>
+</header>
+
+<main>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Fecha Nacimiento</th>
+        <th>Edad</th>
+        <th>Fecha Inscripción</th>
+        <th>Pago Mensual</th>
+        <th>Calificación</th>
+        <th>% Asistencia</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.nombre }}</td>
+        <td>{{ student.fechaNacimiento | date:'longDate' }}</td>
+        <td>{{ student.fechaNacimiento | edad }}</td>
+        <td>{{ student.fechaInscripcion | date:'shortDate' }}</td>
+        <td>{{ student.pagoMensual | currency:'USD':'symbol':'1.2-2' }}</td>
+        <td>{{ student.calificacion }}</td>
+        <td>{{ student.asistencia }}%</td>
+        <td [ngClass]="{'aprobado': (student.calificacion | estado) === 'APROBADO', 'reprobado': (student.calificacion | estado) === 'REPROBADO'}">
+          {{ student.calificacion | estado }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<footer>
+  <p>&copy; 2024 Portal de Estudiantes</p>
+</footer>
