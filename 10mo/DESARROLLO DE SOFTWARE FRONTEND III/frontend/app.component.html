@@ -1,0 +1,113 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <p>Este es un ejemplo de formulario en Angular utilizando Template Driven Forms.</p>
+
+  <form #contactoForm="ngForm" (ngSubmit)="onSubmit(contactoForm)" class="form-card">
+    <h2>Formulario de Contacto</h2>
+
+    <!-- Campo Nombre -->
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="usuario.nombre"
+        #nombreInput="ngModel"
+        required
+        minlength="3"
+        class="form-control"
+        [class.is-invalid]="nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)"
+      >
+      <div *ngIf="nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)" class="validation-feedback">
+        <div *ngIf="nombreInput.errors?.['required']">El nombre es obligatorio.</div>
+        <div *ngIf="nombreInput.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</div>
+      </div>
+    </div>
+
+    <!-- Campo Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="usuario.email"
+        #emailInput="ngModel"
+        required
+        email
+        class="form-control"
+        [class.is-invalid]="emailInput.invalid && (emailInput.dirty || emailInput.touched)"
+      >
+      <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="validation-feedback">
+        <div *ngIf="emailInput.errors?.['required']">El email es obligatorio.</div>
+        <div *ngIf="emailInput.errors?.['email']">Por favor, introduce un email válido.</div>
+      </div>
+    </div>
+
+    <!-- Campo Teléfono -->
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input
+        type="text"
+        id="telefono"
+        name="telefono"
+        [(ngModel)]="usuario.telefono"
+        #telefonoInput="ngModel"
+        required
+        minlength="7"
+        pattern="^[0-9]*$"
+        class="form-control"
+        [class.is-invalid]="telefonoInput.invalid && (telefonoInput.dirty || telefonoInput.touched)"
+      >
+      <div *ngIf="telefonoInput.invalid && (telefonoInput.dirty || telefonoInput.touched)" class="validation-feedback">
+        <div *ngIf="telefonoInput.errors?.['required']">El teléfono es obligatorio.</div>
+        <div *ngIf="telefonoInput.errors?.['minlength']">Debe tener al menos 7 dígitos.</div>
+        <div *ngIf="telefonoInput.errors?.['pattern']">Solo se permiten números.</div>
+      </div>
+    </div>
+
+    <!-- Campo Tipo de Consulta -->
+    <div class="form-group">
+      <label for="consulta">Tipo de Consulta:</label>
+      <select
+        id="consulta"
+        name="consulta"
+        [(ngModel)]="usuario.tipoConsulta"
+        #consultaInput="ngModel"
+        required
+        class="form-control"
+        [class.is-invalid]="consultaInput.invalid && (consultaInput.dirty || consultaInput.touched)"
+      >
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="Soporte Técnico">Soporte Técnico</option>
+        <option value="Ventas">Ventas</option>
+        <option value="General">General</option>
+      </select>
+      <div *ngIf="consultaInput.invalid && (consultaInput.dirty || consultaInput.touched)" class="validation-feedback">
+        <div *ngIf="consultaInput.errors?.['required']">Seleccionar un tipo de consulta es obligatorio.</div>
+      </div>
+    </div>
+
+    <!-- Campo Mensaje -->
+    <div class="form-group">
+      <label for="mensaje">Mensaje:</label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        [(ngModel)]="usuario.mensaje"
+        #mensajeInput="ngModel"
+        rows="5"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <button type="submit" [disabled]="contactoForm.invalid" class="btn-submit">Enviar</button>
+  </form>
+
+  <div class="form-data-display" *ngIf="contactoForm.submitted">
+    <h3>Datos Enviados (Solo para demostración):</h3>
+    <pre>{{ usuario | json }}</pre>
+  </div>
+</div>
